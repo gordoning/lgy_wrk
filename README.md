@@ -11,6 +11,11 @@
 ./wrk -t5 -c200 -d180s --script=findnearstore.lua --latency http://u.zhinengxiyifang.cn:80/api/Stores/findNearStore
 ```
 
+搜索附近洗衣房
+```
+./wrk -t2 -c200 -d10s --script='./ujing/findnearstore.lua' http://it-wx-test.zhinengxiyifang.cn/api/Stores/findNearStoreInc
+```
+
 -t10 表示线程个数，一般不需要改动
 
 -c200 表示TCP每秒并发连接的个数，上面是200，可以根据实际测试情况增大或减少，这个可以模拟同时在线的用户数量
